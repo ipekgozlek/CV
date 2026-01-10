@@ -1,0 +1,40 @@
+{
+  "blocks": [
+    {
+      "id": 1,
+      "title": "İndirimdekiler",
+      "products": [
+        {
+          "id": 101,
+          "name": "Papia Biocare Kağıt Havlu 6'lı",
+          "price": 174.90,
+          "image": "/images/papia.jpeg"
+        },
+        {
+          "id": 102,
+          "name": "Domestos Yüzey Temizleyici 1500 ML",
+          "price": 69.50,
+          "image": "/images/domestos.jpeg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Popüler Ürünler",
+      "products": [
+        {
+          "id": 201,
+          "name": "Kara Sevda Yerli Tuzsuz Siyah Ayçekirdeği 125 G",
+          "price": 28.75,
+          "image": "/images/cekirdek.jpeg"
+        },
+        {
+          "id": 202,
+          "name": "Cappy Kayısı Nektarı Karton Kutu 1 L",
+          "price": 53.90,
+          "image": "/images/cappy.jpeg"
+        }
+      ]
+    }
+  ]
+}
