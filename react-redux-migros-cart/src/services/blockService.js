@@ -5,3 +5,8 @@ export const getBlocks=async () => {
     const responce=await axios.get(API_URL);
     return responce.data;       
 };
+
+export const getBlockById = async (id) => {
+    const responce= await axios.get(`${API_URL}/${id}`);
+    return responce.data;
+};
