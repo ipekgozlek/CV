@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {getBlocks} from "../services/blockService.js";
+import Block from "../components/Block.jsx";
 
 function Blocks(){
     const [blocks,setBlocks]=useState([]);
@@ -8,24 +9,19 @@ function Blocks(){
         getBlocks().then(data=>setBlocks(data));
     },[]);
     return(
-        <div>
+        <div
+        style={{
+          display: "flex",
+          gap:"24px",
+          justifyContent:"center",
+          flexWrap:"wrap",
+        }}
+        >
       {blocks.map(block => (
-        <div key={block.id}>
-          <h2>{block.title}</h2>
-
-          <div style={{ display: "flex", gap: "16px" }}>
-            {block.products.map(product => (
-              <div key={product.id}>
-                <img src={product.image} width={120} />
-                <p>{product.name}</p>
-                <p>{product.price} ₺</p>
-              </div>
-            ))}
-          </div>
-        </div>
+        <Block key={block.id} block={block} />
       ))}
     </div>
-  );
+    );
 }
 
 export default Blocks;

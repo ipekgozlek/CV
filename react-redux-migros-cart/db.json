@@ -13,8 +13,8 @@
         {
           "id": 102,
           "name": "Domestos Yüzey Temizleyici 1500 ML",
-          "price": 69.50,
-          "image": "/images/domestos.jpeg"
+          "price": 169.50,
+          "image": "/images/domestos.jpg"
         }
       ]
     },
@@ -26,13 +26,13 @@
           "id": 201,
           "name": "Kara Sevda Yerli Tuzsuz Siyah Ayçekirdeği 125 G",
           "price": 28.75,
-          "image": "/images/cekirdek.jpeg"
+          "image": "/images/cekirdek.jpg"
         },
         {
           "id": 202,
           "name": "Cappy Kayısı Nektarı Karton Kutu 1 L",
           "price": 53.90,
-          "image": "/images/cappy.jpeg"
+          "image": "/images/cappy.jpg"
         }
       ]
     }
