@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {addToCart, decreaseQuantity, removeFromCart} from "../features/cart/cartSlice";
+import {addToCart} from "../features/cart/cartSlice";
 
 
 function ProductCard({ product }) {
@@ -7,12 +7,6 @@ function ProductCard({ product }) {
 
     const handleAddToCart=()=> {
         dispatch(addToCart(product));
-    };
-    const handleDecreaseQuantity=()=> {
-        dispatch(decreaseQuantity(product.id));
-    };
-    const handleRemoveFromCart=()=> {
-        dispatch(removeFromCart(product.id));
     };
 
     return (
@@ -22,7 +16,7 @@ function ProductCard({ product }) {
         padding: "12px",
         borderRadius: "8px",
         textAlign: "center",
-      }}
+    }}
     >
             <img 
             src={product.image}
@@ -35,12 +29,7 @@ function ProductCard({ product }) {
             <button onClick={handleAddToCart}>
                 Sepete Ekle
             </button>
-            <button onClick={handleDecreaseQuantity} style={{marginLeft: '8px'}}>
-                Sepetten Çıkar
-            </button>
-            <button onClick={handleRemoveFromCart} style={{marginLeft: '8px'}}>
-                Tüm Sepeti Sil
-            </button>
+        
         </div>
     );
 }
