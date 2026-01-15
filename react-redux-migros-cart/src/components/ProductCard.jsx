@@ -16,7 +16,7 @@ function ProductCard({ product }) {
         padding: "12px",
         borderRadius: "8px",
         textAlign: "center",
-      }}
+    }}
     >
             <img 
             src={product.image}
@@ -29,6 +29,7 @@ function ProductCard({ product }) {
             <button onClick={handleAddToCart}>
                 Sepete Ekle
             </button>
+        
         </div>
     );
 }
