@@ -15,7 +15,7 @@ function Cart(){
                     <div style={{marginTop:"6px"}}> 
             <h3>Toplam Tutar: {totalAmount.toFixed(2)} ₺</h3>
         </div>
-        </div>
+        </div>  
     );
 } 
 
