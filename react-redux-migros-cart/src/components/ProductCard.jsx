@@ -26,7 +26,14 @@ function ProductCard({ product }) {
             <p>{product.name}</p>
             <p>{product.price} ₺</p>    
 
-            <button onClick={handleAddToCart}>
+            <button style={{
+                backgroundColor: "#f54a0c", 
+                color: "#ffffff", 
+                border: "none", 
+                padding: "8px 12px", 
+                borderRadius: "8px", 
+                cursor: "pointer"}} 
+                onClick={handleAddToCart}>
                 Sepete Ekle
             </button>
         

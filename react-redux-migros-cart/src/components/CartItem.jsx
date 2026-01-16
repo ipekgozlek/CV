@@ -15,11 +15,11 @@ function CartItem({ item }) {
 
     return (
         <div style={{
-            border: "1px solid #6a0808",
+            border: "1px solid #1dc33e",
             padding: "6px",
             borderRadius: "8px",
             textAlign: "center",
-            backgroundColor: "#e7734c",
+            backgroundColor: "#f8f6f6",
             marginBottom: "12px",
         }}>
             <div style={{ 
@@ -40,16 +40,16 @@ function CartItem({ item }) {
 
 
 
-            <div style={{display:"flex", alignItems:"center", marginTop:"8px"}}>
-            <button onClick={handleDecreaseQuantity} style={{marginLeft: '8px'}}>
+            <div style={{display:"flex", alignItems:"center", marginTop:"8px", width:"max-content", gap:"8px"}}>
+            <button onClick={handleDecreaseQuantity} style={{marginLeft: '8px',backgroundColor: "#f54a0c", color: "#ffffff"}}>
             -
             </button>
             <p>Adet: {item.quantity}</p>
 
-            <button onClick={handleIncreaseQuantity} style={{marginLeft: '8px'}}>
+            <button onClick={handleIncreaseQuantity} style={{marginLeft: '8px',backgroundColor: "#f54a0c", color: "#ffffff"}}>
             +
             </button>
-            <button onClick={handleRemoveFromCart} style={{marginLeft: '8px'}}>
+            <button onClick={handleRemoveFromCart} style={{marginLeft: '8px',backgroundColor: "#f54a0c", color: "#ffffff"}}>
             Sil
             </button>
             </div>

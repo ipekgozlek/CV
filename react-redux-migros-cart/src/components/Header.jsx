@@ -14,7 +14,7 @@ const totalQuantity=items.reduce((sum,item)=>sum + item.quantity,0);
             padding: "16px 24px",
             borderBottom: "1px solid #333"}}>
             <Link to="/" style={{textDecoration:"none"}}>
-            Migros Online Alışveriş
+            Migros Sanal Market
             </Link>
 
             
