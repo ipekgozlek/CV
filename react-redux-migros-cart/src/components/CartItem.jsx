@@ -1,5 +1,7 @@
 import { decreaseQuantity, removeFromCart,increaseQuantity} from "../features/cart/cartSlice";
 import {useDispatch} from "react-redux";
+import "./cartButtons.css";
+
 
 function CartItem({ item }) {
     const dispatch= useDispatch();
@@ -41,15 +43,15 @@ function CartItem({ item }) {
 
 
             <div style={{display:"flex", alignItems:"center", marginTop:"8px", width:"max-content", gap:"8px"}}>
-            <button onClick={handleDecreaseQuantity} style={{marginLeft: '8px',backgroundColor: "#f54a0c", color: "#ffffff"}}>
+            <button className="cart-btn" onClick={handleDecreaseQuantity}>
             -
             </button>
             <p>Adet: {item.quantity}</p>
 
-            <button onClick={handleIncreaseQuantity} style={{marginLeft: '8px',backgroundColor: "#f54a0c", color: "#ffffff"}}>
+            <button className="cart-btn" onClick={handleIncreaseQuantity}>
             +
             </button>
-            <button onClick={handleRemoveFromCart} style={{marginLeft: '8px',backgroundColor: "#f54a0c", color: "#ffffff"}}>
+            <button className="cart-btn cart-btn-danger" onClick={handleRemoveFromCart}>
             Sil
             </button>
             </div>

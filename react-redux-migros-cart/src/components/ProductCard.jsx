@@ -30,7 +30,7 @@ function ProductCard({ product }) {
                 backgroundColor: "#f54a0c", 
                 color: "#ffffff", 
                 border: "none", 
-                padding: "8px 12px", 
+                padding: "6px 10px", 
                 borderRadius: "8px", 
                 cursor: "pointer"}} 
                 onClick={handleAddToCart}>
