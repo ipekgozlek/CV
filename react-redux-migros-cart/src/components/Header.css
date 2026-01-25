@@ -12,18 +12,20 @@
 .topbar {
   background: #ff7a00;
   color: white;
-  padding: 12px 16px;
+  padding: 20px 16px;
 }
+
 .topbarInner {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ;
 }
 
 .brand:visited,
 .brand:hover,
 .brand:active {
-  color: white;
+  color: rgb(228, 219, 219);
   text-decoration: none;
 }
 
@@ -33,6 +35,44 @@
   font-weight: 800;
   font-size: 18px;
   letter-spacing: 0.2px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.brand:hover {
+  opacity: 0.9;
+  color: rgb(5, 5, 4);
+}
+
+.headerLinks {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.favoritesLink:visited,
+.favoritesLink:hover,
+.favoritesLink:active {
+  color: white;
+  text-decoration: none;
+}
+
+.favoritesLink {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 12px 16px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.favoritesLink:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .cartLink:visited,
@@ -41,13 +81,14 @@
   color: white;
   text-decoration: none;
 }
+
 .cartLink {
   position: relative;
   text-decoration: none;
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.6);
-  padding: 8px 12px;
-  border-radius: 10px;
+  padding: 18px 12px;
+  border-radius: 20px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -82,6 +123,7 @@
   padding: 12px 16px;
   border-bottom: 1px solid #e5e7eb;
 }
+
 .subbarInner {
   display: flex;
   align-items: center;
@@ -129,17 +171,53 @@
   font-weight: 700;
   cursor: pointer;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 768px) {
   .subbarInner {
     flex-direction: column;
     align-items: stretch;
+    gap: 10px;
   }
-  
+
   .searchWrap {
-    width: 100%;
     min-width: 0;
+    width: 100%;
   }
+
+  .searchBtn {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .topbarInner {
+    gap: 10px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .headerLinks {
+    gap: 8px;
+  }
+
+  .favoritesLink {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .favoritesLink span:first-child {
+    display: none;
+  }
+
+  .favoritesLink::before {
+    content: "❤️";
+  }
+
   .cartLink {
     padding: 6px 10px;
+    border-radius: 9px;
+    font-size: 12px;
   }
 }

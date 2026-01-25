@@ -1,42 +1,47 @@
-import {useDispatch} from "react-redux";
-import {addToCart} from "../features/cart/cartSlice";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../features/cart/cartSlice";
+import { showToast } from "../features/toastSlice";
+import { toggleFavorite } from "../features/favoritesSlice";
+import "./ProductCard.css";
 
 function ProductCard({ product }) {
     const dispatch = useDispatch();
+    const isFavorite = useSelector(state =>
+        state.favorites.items.some(item => item.id === product.id)
+    );
 
-    const handleAddToCart=()=> {
+    const handleAddToCart = () => {
         dispatch(addToCart(product));
+        dispatch(showToast(`✅ ${product.name} sepete eklendi`));
+    };
+
+    const handleToggleFavorite = () => {
+        dispatch(toggleFavorite(product));
+        const message = isFavorite
+            ? `💔 ${product.name} favorilerden çıkarıldı`
+            : `❤️ ${product.name} favorilere eklendi`;
+        dispatch(showToast(message));
     };
 
     return (
-        <div  
-        style={{
-        border: "1px solid #444",
-        padding: "12px",
-        borderRadius: "8px",
-        textAlign: "center",
-    }}
-    >
-            <img 
-            src={product.image}
-            width={120}
-            alt={product.name}
-            />
-            <p>{product.name}</p>
-            <p>{product.price} ₺</p>    
+        <div className="productCard">
+            <button className="favoriteBtn" onClick={handleToggleFavorite}>
+                {isFavorite ? "❤️" : "🤍"}
+            </button>
 
-            <button style={{
-                backgroundColor: "#f54a0c", 
-                color: "#ffffff", 
-                border: "none", 
-                padding: "6px 10px", 
-                borderRadius: "8px", 
-                cursor: "pointer"}} 
+            <img
+                src={product.image}
+                alt={product.name}
+            />
+            <p className="productName">{product.name}</p>
+            <p className="productPrice">{product.price} ₺</p>
+
+            <button
+                className="addToCartBtn"
                 onClick={handleAddToCart}>
                 Sepete Ekle
             </button>
-        
+
         </div>
     );
 }

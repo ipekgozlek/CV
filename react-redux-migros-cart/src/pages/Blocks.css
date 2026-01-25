@@ -1,0 +1,18 @@
+.blocksPage {
+  padding: 24px;
+}
+
+.blocksGrid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Mobilde tek sütun */
+@media (max-width: 768px) {
+  .blocksGrid {
+    flex-direction: column;
+    align-items: center;
+  }
+}

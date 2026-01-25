@@ -1,0 +1,14 @@
+.blockCard{
+  width: 360px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  background: #fff;
+}
+
+@media (max-width: 768px){
+  .blockCard{
+    width: 100%;
+    max-width: 420px;
+  }
+}
