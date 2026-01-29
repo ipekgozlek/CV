@@ -1,16 +1,44 @@
-# React + Vite
+# Migros Shopping Cart (React + Redux Toolkit)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern e-commerce shopping cart application inspired by Migros, built with React, Redux Toolkit, and Vite.
 
-Currently, two official plugins are available:
+## Live Demo
+- Frontend: https://migros-shop.vercel.app
+- Backend: Hosted on Render (REST API)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- React 19
+- Redux Toolkit (state management)
+- React Router v7
+- Axios (API communication)
+- Vite
+- JSON Server (backend simulation)
+- Vercel (frontend deployment)
+- Render (backend deployment)
 
-## React Compiler
+## Features
+- Product listing from backend API
+- Add / remove items from cart
+- Quantity management
+- Favorites system
+- Toast notifications
+- Responsive UI
+- Environment-based API configuration
+- Clean service layer architecture
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
+src/
+├─ features/
+│ ├─ cart/ (cartSlice - Redux Toolkit)
+│ ├─ favoritesSlice
+│ └─ toastSlice
+├─ pages/
+├─ services/
+│ └─ blockService.js
+└─ App.jsx
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Backend
+- Backend is hosted separately on **Render**
+- API base URL is managed via environment variables:
+```js
+const API_URL = import.meta.env.VITE_API_URL;

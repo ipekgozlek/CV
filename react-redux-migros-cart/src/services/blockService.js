@@ -1,5 +1,6 @@
 import axios from 'axios';
-const API_URL = 'https://migros-backend-p6a1.onrender.com';
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 export const getBlocks = async () => {
     const responce = await axios.get(`${API_URL}/blocks`);
