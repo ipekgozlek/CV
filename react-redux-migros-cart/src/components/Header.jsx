@@ -5,6 +5,7 @@ import "./Header.css";
 
 function Header() {
   const { items, totalAmount } = useSelector((state) => state.cart);
+  const favoritesCount = useSelector((state) => state.favorites.items.length);
   const totalQuantity = items.reduce((sum, item) => sum + item.quantity, 0);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
@@ -37,10 +38,8 @@ function Header() {
           <div className="headerLinks">
             <Link to="/favorites" className="favoritesLink">
               <span>Favorilerim</span>
-              {useSelector(state => state.favorites.items.length) > 0 && (
-                <span className="badge">
-                  {useSelector(state => state.favorites.items.length)}
-                </span>
+              {favoritesCount > 0 && (
+                <span className="badge">{favoritesCount}</span>
               )}
             </Link>
 
