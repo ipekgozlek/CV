@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { addToCart } from "../features/cart/cartSlice";
 import { showToast } from "../features/toastSlice";
 import { toggleFavorite } from "../features/favoritesSlice";
@@ -6,9 +6,11 @@ import "./ProductCard.css";
 
 function ProductCard({ product }) {
     const dispatch = useDispatch();
-    const isFavorite = useSelector(state =>
-        state.favorites.items.some(item => item.id === product.id)
-    );
+    const favorites = useSelector((state) => state.favorites?.items ?? []);
+
+    if (!product) return null;
+
+    const isFavorite = favorites.some((item) => item.id === product.id);
 
     const handleAddToCart = () => {
         dispatch(addToCart(product));

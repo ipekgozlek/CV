@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
 import "./Favorites.css";
 
 function Favorites() {
-    const favorites = useSelector(state => state.favorites.items);
+    const favorites = useSelector(state => state.favorites?.items ?? []);
+
 
     return (
         <div className="favoritesPage">
