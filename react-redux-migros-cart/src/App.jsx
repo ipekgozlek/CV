@@ -3,8 +3,9 @@ import Blocks from './pages/Blocks.jsx';
 import Header from './components/Header.jsx';
 import Cart from './pages/Cart.jsx';
 import Favorites from './pages/Favorites.jsx';
-import Payment from './pages/Payment.jsx';
 import Toast from './components/Toast.jsx';
+import Checkout from './pages/Checkout.jsx';
+import Success from './pages/Success.jsx';
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
 import { hideToast } from './features/toastSlice';
@@ -19,7 +20,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Blocks />} />
       <Route path="/cart" element={<Cart />} />
-      <Route path="/payment" element={<Payment />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/success" element={<Success />} />s
       <Route path="/favorites" element={<Favorites />} />
     </Routes>
   </>
