@@ -35,16 +35,7 @@ The project is split into two parts:
 - **Backend**: Mock REST API built with **json-server**, deployed separately on **Render**
 
 During local development, both frontend and backend can run together.  
-In production, they are deployed separately because Vercel hosts static frontend builds, while json-server requires a running server process.
-
-## Environment Configuration
-The frontend reads the API base URL from an environment variable:
-
-```js
-const API_URL = import.meta.env.VITE_API_URL;
-
-VITE_API_URL=https://migros-backend-1.onrender.com
-
+In production, they are deployed separately because Vercel hosts static frontend builds, while json-server requires a running server process. 
 The same variable is configured in Vercel → Project Settings → Environment Variables.
 
 Local Development
@@ -60,11 +51,18 @@ npm run server
 ![Shopping cart Page](./screenshots/sepet.jpg)
 ![Favorites Page](./screenshots/favori.jpg)
 ![Payment Page](./screenshots/odeme.jpg)
-![Home_Mobile Page](./screenshots/mobileanasayfa.jpg)
-![Shopping cart_Mobile Page](./screenshots/mobilesepet.jpg)
-![Shopping cart_Mobile Page](./screenshots/mobilesepet.jpg)
-![Add_Shopping cart_Mobile Page](./screenshots/mobilesepeteekleme.jpg)
-![Payment_Mobile Page](./screenshots/mobileodeme.jpg)
+![Home_Mobile Page](./screenshots/mobileanasayfa.jpeg)
+![Shopping cart_Mobile Page](./screenshots/mobilesepet.jpeg)
+![Add_Shopping cart_Mobile Page](./screenshots/mobilesepeteekleme.jpeg)
+![Payment_Mobile Page](./screenshots/mobileodeme.jpeg)
+
+## Environment Configuration
+The frontend reads the API base URL from an environment variable:
+
+```md
+const API_URL = import.meta.env.VITE_API_URL;
+
+VITE_API_URL=https://migros-backend-1.onrender.com
 
 Summary
 
