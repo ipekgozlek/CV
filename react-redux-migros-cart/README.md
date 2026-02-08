@@ -56,7 +56,15 @@ Backend (optional local mock)
 npm run server
 
 > Desktop & mobile views
-
+![Home Page](./screenshots/anasayfa.jpg)
+![Shopping cart Page](./screenshots/sepet.jpg)
+![Favorites Page](./screenshots/favori.jpg)
+![Payment Page](./screenshots/odeme.jpg)
+![Home_Mobile Page](./screenshots/mobileanasayfa.jpg)
+![Shopping cart_Mobile Page](./screenshots/mobilesepet.jpg)
+![Shopping cart_Mobile Page](./screenshots/mobilesepet.jpg)
+![Add_Shopping cart_Mobile Page](./screenshots/mobilesepeteekleme.jpg)
+![Payment_Mobile Page](./screenshots/mobileodeme.jpg)
 
 Summary
 
