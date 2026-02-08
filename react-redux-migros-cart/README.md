@@ -55,57 +55,8 @@ npm run dev
 Backend (optional local mock)
 npm run server
 
+> Desktop & mobile views
 
-In production, the backend runs on Render, so running the local mock server is not required.
-
-Backend (Render Compatibility)
-
-Render assigns the service port dynamically.
-The backend server listens to the environment port:
-
-const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
-  console.log(`API running on port ${PORT}`);
-});
-
-
-This setup is required for successful deployment on Render.
-
-Bugfix Notes – React Hooks Order Crash (#300)
-
-While implementing the Favorites badge in the header, the application occasionally crashed with a white screen and the following production error:
-
-Minified React error #300
-Rendered fewer hooks than expected
-
-Root Cause
-
-The issue was caused by calling React hooks (useSelector) inside JSX conditionals.
-This resulted in hooks being executed in different orders between renders, violating the Rules of Hooks.
-
-Incorrect usage:
-
-{useSelector(state => state.favorites.items.length) > 0 && (
-  <span>{useSelector(state => state.favorites.items.length)}</span>
-)}
-
-
-When the favorites count changed from 0 to 1, an additional hook call occurred, causing the application to crash.
-
-Solution
-
-All hooks were moved to the top level of the component, and JSX now only consumes plain variables:
-
-const favoritesCount = useSelector(
-  state => state.favorites.items.length
-);
-
-{favoritesCount > 0 && (
-  <span className="badge">{favoritesCount}</span>
-)}
-
-
-This guarantees that hooks are always called in the same order on every render, preventing runtime crashes.
 
 Summary
 
