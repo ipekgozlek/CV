@@ -46,7 +46,7 @@ npm run dev
 Backend (optional local mock)
 npm run server
 
-> Desktop & mobile views
+## Desktop & mobile views
 ![Home Page](./screenshots/anasayfa.jpg)
 ![Shopping cart Page](./screenshots/sepet.jpg)
 ![Favorites Page](./screenshots/favori.jpg)
